@@ -272,7 +272,7 @@ namespace RezervacijuSistema
             // 
             // EventTimeToLabel
             // 
-            this.EventTimeToLabel.Location = new System.Drawing.Point(566, 319);
+            this.EventTimeToLabel.Location = new System.Drawing.Point(722, 411);
             this.EventTimeToLabel.Name = "EventTimeToLabel";
             this.EventTimeToLabel.Size = new System.Drawing.Size(11, 13);
             this.EventTimeToLabel.TabIndex = 10;
@@ -280,7 +280,7 @@ namespace RezervacijuSistema
             // 
             // EventTimeFromLabel
             // 
-            this.EventTimeFromLabel.Location = new System.Drawing.Point(428, 319);
+            this.EventTimeFromLabel.Location = new System.Drawing.Point(584, 411);
             this.EventTimeFromLabel.Name = "EventTimeFromLabel";
             this.EventTimeFromLabel.Size = new System.Drawing.Size(19, 13);
             this.EventTimeFromLabel.TabIndex = 9;
@@ -288,7 +288,7 @@ namespace RezervacijuSistema
             // 
             // EventDateLabel
             // 
-            this.EventDateLabel.Location = new System.Drawing.Point(388, 255);
+            this.EventDateLabel.Location = new System.Drawing.Point(544, 347);
             this.EventDateLabel.Name = "EventDateLabel";
             this.EventDateLabel.Size = new System.Drawing.Size(23, 13);
             this.EventDateLabel.TabIndex = 8;
@@ -296,7 +296,7 @@ namespace RezervacijuSistema
             // 
             // EventHallLabel
             // 
-            this.EventHallLabel.Location = new System.Drawing.Point(388, 186);
+            this.EventHallLabel.Location = new System.Drawing.Point(544, 278);
             this.EventHallLabel.Name = "EventHallLabel";
             this.EventHallLabel.Size = new System.Drawing.Size(20, 13);
             this.EventHallLabel.TabIndex = 7;
@@ -304,7 +304,7 @@ namespace RezervacijuSistema
             // 
             // EventNameLabel
             // 
-            this.EventNameLabel.Location = new System.Drawing.Point(388, 120);
+            this.EventNameLabel.Location = new System.Drawing.Point(544, 212);
             this.EventNameLabel.Name = "EventNameLabel";
             this.EventNameLabel.Size = new System.Drawing.Size(103, 13);
             this.EventNameLabel.TabIndex = 6;
@@ -313,7 +313,7 @@ namespace RezervacijuSistema
             // TimeEditTo
             // 
             this.TimeEditTo.EditValue = new System.DateTime(2023, 1, 23, 0, 0, 0, 0);
-            this.TimeEditTo.Location = new System.Drawing.Point(566, 338);
+            this.TimeEditTo.Location = new System.Drawing.Point(722, 430);
             this.TimeEditTo.Name = "TimeEditTo";
             this.TimeEditTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -324,7 +324,7 @@ namespace RezervacijuSistema
             // TimeEditFrom
             // 
             this.TimeEditFrom.EditValue = new System.DateTime(2023, 1, 23, 0, 0, 0, 0);
-            this.TimeEditFrom.Location = new System.Drawing.Point(428, 338);
+            this.TimeEditFrom.Location = new System.Drawing.Point(584, 430);
             this.TimeEditFrom.Name = "TimeEditFrom";
             this.TimeEditFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -334,7 +334,7 @@ namespace RezervacijuSistema
             // 
             // CreateEventButton
             // 
-            this.CreateEventButton.Location = new System.Drawing.Point(428, 417);
+            this.CreateEventButton.Location = new System.Drawing.Point(584, 509);
             this.CreateEventButton.Name = "CreateEventButton";
             this.CreateEventButton.Size = new System.Drawing.Size(238, 72);
             this.CreateEventButton.TabIndex = 3;
@@ -344,7 +344,7 @@ namespace RezervacijuSistema
             // EventStartDateTimeOffset
             // 
             this.EventStartDateTimeOffset.EditValue = null;
-            this.EventStartDateTimeOffset.Location = new System.Drawing.Point(388, 274);
+            this.EventStartDateTimeOffset.Location = new System.Drawing.Point(544, 366);
             this.EventStartDateTimeOffset.Name = "EventStartDateTimeOffset";
             this.EventStartDateTimeOffset.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -354,7 +354,7 @@ namespace RezervacijuSistema
             // 
             // CreateEventHallSelect
             // 
-            this.CreateEventHallSelect.Location = new System.Drawing.Point(388, 205);
+            this.CreateEventHallSelect.Location = new System.Drawing.Point(544, 297);
             this.CreateEventHallSelect.Name = "CreateEventHallSelect";
             this.CreateEventHallSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -371,7 +371,7 @@ namespace RezervacijuSistema
             // 
             // CreateEventNameTextEdit
             // 
-            this.CreateEventNameTextEdit.Location = new System.Drawing.Point(388, 140);
+            this.CreateEventNameTextEdit.Location = new System.Drawing.Point(544, 232);
             this.CreateEventNameTextEdit.Name = "CreateEventNameTextEdit";
             this.CreateEventNameTextEdit.Size = new System.Drawing.Size(334, 20);
             this.CreateEventNameTextEdit.TabIndex = 0;
@@ -594,6 +594,7 @@ namespace RezervacijuSistema
             // 
             // ReservedSeatSchedulerControl
             // 
+            this.ReservedSeatSchedulerControl.ActiveViewType = DevExpress.XtraScheduler.SchedulerViewType.Gantt;
             this.ReservedSeatSchedulerControl.BackColor = System.Drawing.SystemColors.WindowText;
             this.ReservedSeatSchedulerControl.DataStorage = this.ReservedSeatSchedulerDataStorage;
             this.ReservedSeatSchedulerControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -619,7 +620,7 @@ namespace RezervacijuSistema
             this.ReservedSeatSchedulerControl.OptionsRangeControl.Scales.Add(timeScale15Minutes2);
             this.ReservedSeatSchedulerControl.OptionsView.ToolTipVisibility = DevExpress.XtraScheduler.ToolTipVisibility.Never;
             this.ReservedSeatSchedulerControl.Size = new System.Drawing.Size(1058, 880);
-            this.ReservedSeatSchedulerControl.Start = new System.DateTime(2023, 1, 25, 0, 0, 0, 0);
+            this.ReservedSeatSchedulerControl.Start = new System.DateTime(2023, 1, 26, 0, 0, 0, 0);
             this.ReservedSeatSchedulerControl.TabIndex = 0;
             this.ReservedSeatSchedulerControl.Text = "schedulerControl1";
             this.ReservedSeatSchedulerControl.Views.AgendaView.Enabled = false;
@@ -630,7 +631,7 @@ namespace RezervacijuSistema
             this.ReservedSeatSchedulerControl.Views.GanttView.AppointmentDisplayOptions.StretchAppointments = true;
             this.ReservedSeatSchedulerControl.Views.GanttView.CellsAutoHeightOptions.AutoHeightMode = DevExpress.XtraScheduler.SchedulerCellAutoHeightMode.Full;
             this.ReservedSeatSchedulerControl.Views.GanttView.CellsAutoHeightOptions.Enabled = true;
-            this.ReservedSeatSchedulerControl.Views.GanttView.CellsAutoHeightOptions.MinHeight = 50;
+            this.ReservedSeatSchedulerControl.Views.GanttView.CellsAutoHeightOptions.MinHeight = 100;
             this.ReservedSeatSchedulerControl.Views.MonthView.Enabled = false;
             this.ReservedSeatSchedulerControl.Views.TimelineView.Enabled = false;
             this.ReservedSeatSchedulerControl.Views.WeekView.Enabled = false;
@@ -684,9 +685,9 @@ namespace RezervacijuSistema
             this.ReservedSeatSchedulerDataStorage.Resources.Mappings.Id = "Id";
             this.ReservedSeatSchedulerDataStorage.Resources.Mappings.Image = "Image";
             this.ReservedSeatSchedulerDataStorage.Resources.Mappings.ParentId = "ParentId";
-            this.ReservedSeatSchedulerDataStorage.AppointmentsInserted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage1_AppointmentsInserted);
-            this.ReservedSeatSchedulerDataStorage.AppointmentsChanged += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage1_AppointmentsChanged);
-            this.ReservedSeatSchedulerDataStorage.AppointmentsDeleted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage1_AppointmentsDeleted);
+            this.ReservedSeatSchedulerDataStorage.AppointmentsInserted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.SchedulerStorage1_AppointmentsInserted);
+            this.ReservedSeatSchedulerDataStorage.AppointmentsChanged += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.SchedulerStorage1_AppointmentsChanged);
+            this.ReservedSeatSchedulerDataStorage.AppointmentsDeleted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.SchedulerStorage1_AppointmentsDeleted);
             // 
             // appointmentsBindingSource
             // 
@@ -820,7 +821,6 @@ namespace RezervacijuSistema
         private DevExpress.XtraGrid.Views.Grid.GridView NotReserverSeatListGridControlView;
         private DevExpress.XtraTab.XtraTabPage ReservationSchedulerTabPage;
         private DevExpress.XtraEditors.SplitContainerControl ReservationTabSplitContainer;
-        private DevExpress.XtraScheduler.SchedulerDataStorage SchedulerDataStorage;
         private DevExpress.XtraEditors.SimpleButton ExactSeatSearchButton;
         private DevExpress.XtraEditors.LabelControl ExactSeatSearch;
         private DevExpress.XtraEditors.TextEdit reserved_seatrowletter;

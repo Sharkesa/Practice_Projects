@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace RezervacijuSistema
 {
+    /// <summary>
+    /// Mainly used to get lists of data from DB or existence of data in there
+    /// </summary>
     class DataSourceControl
     {
+        /// <summary>
+        /// Gets list of halls by stored procedure "prc_selectHalls"
+        /// </summary>
+        /// <returns>Returns list of halls, of custom datatype hall</returns>
         public static List<dataClass.Hall> GetHallList()
         {
             List<dataClass.Hall> halls = new List<dataClass.Hall> { };
@@ -25,19 +32,11 @@ namespace RezervacijuSistema
 
             return halls;
         }
-
-        //MUST BE IMPLEMENTED FOR LATER USE
-        //public static List<dataClass.HallGroup> GetHallGroupList()
-        //{
-        //    List<dataClass.HallGroup> hallgroups = new List<dataClass.HallGroup> { };
-
-        //    DataTable hallgroupslist = SQLHelper.GetTable("prc_selectHallGroups", "all", new string[1]);
-
-        //    throw NotImplementedException(
-
-        //    return hallgroups;
-        //}
-
+        /// <summary>
+        /// Gets list of hallgroups by stored procedure "prc_selectHallGroups"
+        /// </summary>
+        /// <param name="hallid">Gets only hallgroups that are in selected hall</param>
+        /// <returns>List of halls of custom datatype hallgroup</returns>
         public static List<dataClass.HallGroup> GetHallGroupList(string hallid)
         {
             List<dataClass.HallGroup> hallgroups = new List<dataClass.HallGroup> { };
@@ -58,7 +57,10 @@ namespace RezervacijuSistema
 
             return hallgroups;
         }
-
+        /// <summary>
+        /// Gets list of events by stored procedure
+        /// </summary>
+        /// <returns>List of events of type Event</returns>
         public static List<dataClass.Event> GetEventList()
         {
             List<dataClass.Event> events = new List<dataClass.Event> { };
@@ -79,7 +81,11 @@ namespace RezervacijuSistema
 
             return events;
         }
-
+        /// <summary>
+        /// Different approach to get eventlist, but only in selected hall
+        /// </summary>
+        /// <param name="hallid"></param>
+        /// <returns></returns>
         public static List<dataClass.Event> GetEventList(string hallid)
         {
             List<dataClass.Event> events = new List<dataClass.Event> { };
@@ -101,7 +107,16 @@ namespace RezervacijuSistema
 
             return events;
         }
-
+        /// <summary>
+        /// Checks whether given seat details exist all together in DB
+        /// </summary>
+        /// <param name="hallid"></param>
+        /// <param name="hallgroupid"></param>
+        /// <param name="seatrow"></param>
+        /// <param name="seatrowletter"></param>
+        /// <param name="seatnumber"></param>
+        /// <param name="seatnumberletter"></param>
+        /// <returns>True if seat is found</returns>
         internal static bool SeatExists(string hallid, string hallgroupid, string seatrow, string seatrowletter, string seatnumber, string seatnumberletter)
         {
             string[] details =

@@ -12,9 +12,16 @@ using System.Xml;
 
 namespace RezervacijuSistema
 {
+    /// <summary>
+    /// Helper to get connection with data from DB
+    /// </summary>
     class SQLHelper
     {
-
+        /// <summary>
+        /// Inserts hall data to DB, which is in type of Dataset
+        /// </summary>
+        /// <param name="dataSet">Set of tables which mainly consist of 3 tables, halls, hallgroups, seats</param>
+        /// <returns>bool if operation is succesful</returns>
         public static bool InsertHallDataToDB(DataSet dataSet)
         {
             int tableID = 0;
@@ -62,6 +69,13 @@ namespace RezervacijuSistema
             return true;
         }
 
+        /// <summary>
+        /// Gets table by stored procedure
+        /// </summary>
+        /// <param name="command">Stored procedure name</param>
+        /// <param name="getBy">item to get list by. "all" if we are pulling whole table without parameters</param>
+        /// <param name="values">parameters which are neccesary for table pull from DB</param>
+        /// <returns>Desired datatable</returns>
         public static DataTable GetTable(string command, string getBy, string[] values)
         {
             DataTable table = new DataTable();
@@ -128,6 +142,7 @@ namespace RezervacijuSistema
             return table;
 
         }
+
 
         internal static bool InsertAppointment(string[] details)
         {

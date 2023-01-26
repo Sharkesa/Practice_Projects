@@ -25,17 +25,7 @@ namespace RezervacijuSistema
         public MainForm()
         {
             InitializeComponent();
-            //Seatlist
-            InitializeHallSelectDataSource(SeatListHallSelectLookUpEdit);
-            //CreateEvent
-            InitializeHallSelectDataSource(CreateEventHallSelect);
-            //ReserveSeat
-            InitializeHallSelectDataSource(ReserveSeatHallSelectLookUpEdit);
-            //EventList
-            InitializeEventList();
-            //Scheduler
             InitializeScheduler();
-
             SeatListGridView.BeforeLeaveRow += SeatListGridView_BeforeLeaveRow;
             SeatListGridView.CustomRowCellEditForEditing += SeatListGridView_CustomRowCellEditForEditing;
             CreateEventNameTextEdit.EditValueChanging += CreateEventTextEdit_EditValueChanging;
@@ -52,9 +42,9 @@ namespace RezervacijuSistema
             InitializeSchedulerAppointments();
             InitializeSchedulerVisuals();
 
-            foreach (TimeScale scale in ReservedSeatSchedulerControl.TimelineView.Scales)
+            foreach (TimeScale scale in ReservedSeatSchedulerControl.GanttView.Scales)
             {
-                scale.Width = 300;
+                scale.Width = 150;
             }
 
             resourcesTree1.NodesReloaded += ResourcesTree1_NodesReloaded;
@@ -91,6 +81,8 @@ namespace RezervacijuSistema
         }
         private bool InitializeHallSelectDataSource(GridLookUpEdit lookup)
         {
+            lookup.DataBindings.Clear();
+
             List<dataClass.Hall> halls = DataSourceControl.GetHallList();
             lookup.DataBindings.Add(new Binding("EditValue", halls, "hallid"));
             lookup.Properties.DataSource = halls;
@@ -792,7 +784,7 @@ namespace RezervacijuSistema
             resourcesTree1.CollapseAll();
             resourcesTree1.EndUpdate();
         }
-        private void appointmentsTableAdapter_RowUpdated(object sender, SqlRowUpdatedEventArgs e)
+        private void AppointmentsTableAdapter_RowUpdated(object sender, SqlRowUpdatedEventArgs e)
         {
             if (e.Status == UpdateStatus.Continue && e.StatementType == StatementType.Insert)
             {
@@ -804,15 +796,15 @@ namespace RezervacijuSistema
                 }
             }
         }
-        private void schedulerStorage1_AppointmentsChanged(object sender, PersistentObjectsEventArgs e)
+        private void SchedulerStorage1_AppointmentsChanged(object sender, PersistentObjectsEventArgs e)
         {
             CommitTask();
         }
-        private void schedulerStorage1_AppointmentsDeleted(object sender, PersistentObjectsEventArgs e)
+        private void SchedulerStorage1_AppointmentsDeleted(object sender, PersistentObjectsEventArgs e)
         {
             CommitTask();
         }
-        private void schedulerStorage1_AppointmentsInserted(object sender, PersistentObjectsEventArgs e)
+        private void SchedulerStorage1_AppointmentsInserted(object sender, PersistentObjectsEventArgs e)
         {
 
             CommitTask();
@@ -824,6 +816,5 @@ namespace RezervacijuSistema
             appointmentsTableAdapter.Update(ganttDataSet.Appointments);
             this.ganttDataSet.Appointments.AcceptChanges();
         }
-
     }
 }
